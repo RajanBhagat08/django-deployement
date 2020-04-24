@@ -1,0 +1,21 @@
+{% extends 'EAD_app/index.html' %}
+{% block body_block %}
+
+
+  <div class="jumbotron">
+      <h2>Event= {{ event }}</h2>
+      <h2>Venue= {{ venue_name }}</h2>
+      <h2>Date= {{ date }}</h2>
+      <form  action="{% url 'EAD_app:hod_rw' %}" method="post">
+        {% csrf_token %}
+        <input type="radio" id="Approved" name="approve" value="yes">
+        <label for="Approved">Approve</label>
+
+        <input type="radio" id="Approved" name="approve" value="no">
+        <label for="Approved">Donot Approve</label>
+
+        <input type="submit" class="btn btn-primary" name="" value="Submit">
+      </form>
+  </div>
+
+{% endblock %}

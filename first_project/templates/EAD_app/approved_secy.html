@@ -1,0 +1,18 @@
+{% extends 'EAD_app/index.html' %}
+{% block body_block %}
+
+<div class="jumbotron">
+    <h1>Here are the Details</h1>
+    <div class="jumbotron">
+      {% for app_form in approved_forms %}
+        <h3>Details of approved form</h3>
+        <h4>Event name: {{ app_form.event_name }}</h4>
+        <h4>Venue name: {{ app_form.requested_venue_secy }}</h4>
+        <h4>Date: {{ app_form.date }}</h4>
+        <h4>Club/Society: {{ app_form.associated_club }}</h4>
+
+      {% endfor %}
+    </div>
+
+
+{% endblock %}
